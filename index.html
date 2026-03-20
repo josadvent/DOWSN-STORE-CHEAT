@@ -46,16 +46,16 @@ canvas {
   width: 260px;
   padding: 14px;
   border-radius: 30px;
-  border: 2px solid #a020f0;
-  color: #a020f0;
+  border: 2px solid #e74c3c; /* Changed from purple to red */
+  color: #e74c3c; /* Changed from purple to red */
   text-align: center;
   text-decoration: none;
   transition: 0.3s;
 }
 .main-btn:hover {
-  background: #a020f0;
+  background: #e74c3c; /* Changed from purple to red */
   color: black;
-  box-shadow: 0 0 20px #a020f0;
+  box-shadow: 0 0 20px #e74c3c; /* Changed from purple to red */
 }
 
 /* FILTER */
@@ -73,12 +73,12 @@ canvas {
   transition: 0.3s;
 }
 .filter button:hover {
-  border: 1px solid #a020f0;
-  box-shadow: 0 0 10px #a020f0;
+  border: 1px solid #e74c3c; /* Changed from purple to red */
+  box-shadow: 0 0 10px #e74c3c; /* Changed from purple to red */
 }
 .filter .active {
-  border: 1px solid #a020f0;
-  box-shadow: 0 0 15px #a020f0;
+  border: 1px solid #e74c3c; /* Changed from purple to red */
+  box-shadow: 0 0 15px #e74c3c; /* Changed from purple to red */
 }
 
 /* CARD */
@@ -94,12 +94,12 @@ canvas {
   padding: 15px;
   border-radius: 20px;
   background: #111;
-  box-shadow: 0 0 15px #a020f050;
+  box-shadow: 0 0 15px #e74c3c50; /* Changed from purple to red */
   transition: 0.3s;
 }
 .card:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 25px #a020f0;
+  box-shadow: 0 0 25px #e74c3c; /* Changed from purple to red */
 }
 
 .card img {
@@ -108,7 +108,7 @@ canvas {
 }
 
 .price {
-  color: #a020f0;
+  color: #e74c3c; /* Changed from purple to red */
 }
 
 .actions {
@@ -129,7 +129,7 @@ canvas {
 }
 
 .order {
-  background: linear-gradient(45deg, #a020f0, #6a00ff);
+  background: linear-gradient(45deg, #e74c3c, #c0392b); /* Changed from purple to red */
   padding: 8px 15px;
   border-radius: 10px;
   color: white;
@@ -153,12 +153,12 @@ canvas {
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-  border: 1px solid #a020f0;
+  border: 1px solid #e74c3c; /* Changed from purple to red */
 }
 .popup button {
   margin-top: 10px;
   padding: 8px 15px;
-  background: #a020f0;
+  background: #e74c3c; /* Changed from purple to red */
   border: none;
   color: white;
   border-radius: 8px;
@@ -357,7 +357,7 @@ for (let i = 0; i < 100; i++) {
 
 function drawRain() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = "#a020f0";
+  ctx.strokeStyle = "#808080"; /* Changed from purple to gray */
 
   rain.forEach(r => {
     ctx.beginPath();
