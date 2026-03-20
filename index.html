@@ -13,18 +13,9 @@ body {
   background: #0b0b0f;
   font-family: 'Poppins', sans-serif;
   color: white;
-  overflow-x: hidden;
 }
 
-/* RAIN */
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-/* TITLE */
+/* HEADER */
 .header {
   text-align: center;
   padding: 30px;
@@ -35,8 +26,8 @@ canvas {
   animation: blink 1.5s infinite;
 }
 @keyframes blink {
-  0%,100% {color:white; text-shadow:0 0 10px white;}
-  50% {color:#ccc; text-shadow:0 0 25px white;}
+  0%,100% {color:white;}
+  50% {color:#ccc;}
 }
 
 /* BUTTON */
@@ -46,16 +37,10 @@ canvas {
   width: 260px;
   padding: 14px;
   border-radius: 30px;
-  border: 2px solid #a020f0;
-  color: #a020f0;
+  border: 2px solid #ff00ff;
+  color: #ff00ff;
   text-align: center;
   text-decoration: none;
-  transition: 0.3s;
-}
-.main-btn:hover {
-  background: #a020f0;
-  color: black;
-  box-shadow: 0 0 20px #a020f0;
 }
 
 /* FILTER */
@@ -66,19 +51,13 @@ canvas {
   margin: 5px;
   padding: 10px 20px;
   border-radius: 20px;
-  border: 1px solid transparent;
+  border: none;
   background: #1a1a1f;
   color: white;
   cursor: pointer;
-  transition: 0.3s;
-}
-.filter button:hover {
-  border: 1px solid #a020f0;
-  box-shadow: 0 0 10px #a020f0;
 }
 .filter .active {
-  border: 1px solid #a020f0;
-  box-shadow: 0 0 15px #a020f0;
+  background: linear-gradient(45deg, #ff00ff, #9900ff);
 }
 
 /* CARD */
@@ -94,20 +73,7 @@ canvas {
   padding: 15px;
   border-radius: 20px;
   background: #111;
-  box-shadow: 0 0 15px #a020f050;
-  transition: 0.4s;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #a020f0;
+  box-shadow: 0 0 20px #ff00ff50;
 }
 
 .card img {
@@ -116,7 +82,7 @@ canvas {
 }
 
 .price {
-  color: #a020f0;
+  color: #ff00ff;
 }
 
 .actions {
@@ -131,21 +97,13 @@ canvas {
   border-radius: 10px;
   cursor: pointer;
 }
-.info:hover {
-  background: white;
-  color: black;
-}
 
 .order {
-  background: linear-gradient(45deg, #a020f0, #6a00ff);
+  background: linear-gradient(45deg, #ff00ff, #9900ff);
   padding: 8px 15px;
   border-radius: 10px;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
-}
-.order:hover {
-  box-shadow: 0 0 15px #a020f0;
 }
 
 /* POPUP */
@@ -165,29 +123,19 @@ canvas {
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-  border: 1px solid #a020f0;
-}
-.popup button {
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: #a020f0;
-  border: none;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="rain"></canvas>
-
 <div class="header">
   <div class="title">DOWSN HACKS STORE</div>
 </div>
 
-<a href="#" class="main-btn">⭐ LIHAT TESTIMONI →</a>
+<a href="https://whatsapp.com/channel/0029VbCWSPqEgGfEQvFui73V" target="_blank" class="main-btn">
+⭐ LIHAT TESTIMONI →
+</a>
 
 <div class="filter">
   <button onclick="filterGame('all', this)" class="active">ALL</button>
@@ -204,7 +152,7 @@ canvas {
   <p>7 Hari - <span class="price">70K</span></p>
   <div class="actions">
     <div class="info" onclick="showInfo('NO ROOT')">INFO</div>
-    <a href="https://wa.me/6282382140321?text=buy%20cheat%20hg%20bang" class="order">ORDER</a>
+    <a href="https://wa.me/6282382140321?text=buy%20cheat%20hg%20no%20root%20bang" target="_blank" class="order">ORDER</a>
   </div>
 </div>
 
@@ -214,7 +162,7 @@ canvas {
   <h3>DRIPT CLIENT (NO ROOT)</h3>
   <div class="actions">
     <div class="info" onclick="showInfo('NO ROOT')">INFO</div>
-    <a href="https://wa.me/6282382140321?text=buy%20dript%20no%20root%20bang" class="order">ORDER</a>
+    <a href="https://wa.me/6282382140321?text=buy%20dript%20no%20root%20bang" target="_blank" class="order">ORDER</a>
   </div>
 </div>
 
@@ -224,7 +172,26 @@ canvas {
   <h3>DRIPT CLIENT (ROOT)</h3>
   <div class="actions">
     <div class="info" onclick="showInfo('ROOT')">INFO</div>
-    <a href="https://wa.me/6282382140321?text=buy%20dript%20root%20bang" class="order">ORDER</a>
+    <a href="https://wa.me/6282382140321?text=buy%20dript%20root%20bang" target="_blank" class="order">ORDER</a>
+  </div>
+</div>
+
+<!-- ML -->
+<div class="card ml">
+  <img src="https://via.placeholder.com/300x200?text=ATTIC">
+  <h3>ATTIC EXCLUSIVE</h3>
+  <div class="actions">
+    <div class="info" onclick="showInfo('SCRIPT PREMIUM')">INFO</div>
+    <a href="https://wa.me/6282382140321?text=buy%20attic%20ml%20bang" target="_blank" class="order">ORDER</a>
+  </div>
+</div>
+
+<div class="card ml">
+  <img src="https://via.placeholder.com/300x200?text=NECRO">
+  <h3>NECRO CHEAT</h3>
+  <div class="actions">
+    <div class="info" onclick="showInfo('ANTI BAN')">INFO</div>
+    <a href="https://wa.me/6282382140321?text=buy%20necro%20ml%20bang" target="_blank" class="order">ORDER</a>
   </div>
 </div>
 
@@ -239,14 +206,6 @@ canvas {
 </div>
 
 <script>
-// animasi masuk
-window.onload = () => {
-  document.querySelectorAll(".card").forEach((c,i)=>{
-    setTimeout(()=>c.classList.add("show"), i*150);
-  });
-};
-
-// filter
 function filterGame(game, el) {
   let cards = document.querySelectorAll(".card");
   let buttons = document.querySelectorAll(".filter button");
@@ -259,7 +218,6 @@ function filterGame(game, el) {
   });
 }
 
-// popup
 function showInfo(text) {
   document.getElementById("popupText").innerText = text;
   document.getElementById("popup").style.display = "flex";
@@ -267,34 +225,6 @@ function showInfo(text) {
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
-
-// rain
-const canvas = document.getElementById("rain");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let rain = Array.from({length:100},()=>({
-  x:Math.random()*canvas.width,
-  y:Math.random()*canvas.height,
-  l:Math.random()*20,
-  s:Math.random()*5+2
-}));
-
-function drawRain(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.strokeStyle="#a020f0";
-  rain.forEach(r=>{
-    ctx.beginPath();
-    ctx.moveTo(r.x,r.y);
-    ctx.lineTo(r.x,r.y+r.l);
-    ctx.stroke();
-    r.y+=r.s;
-    if(r.y>canvas.height){r.y=0;r.x=Math.random()*canvas.width;}
-  });
-  requestAnimationFrame(drawRain);
-}
-drawRain();
 </script>
 
 </body>
