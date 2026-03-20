@@ -13,6 +13,15 @@ body {
   background: #0b0b0f;
   font-family: 'Poppins', sans-serif;
   color: white;
+  overflow-x: hidden;
+}
+
+/* RAIN */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /* HEADER */
@@ -26,8 +35,8 @@ body {
   animation: blink 1.5s infinite;
 }
 @keyframes blink {
-  0%,100% {color:white;}
-  50% {color:#ccc;}
+  0%,100% {color:white; text-shadow:0 0 10px white;}
+  50% {color:#ccc; text-shadow:0 0 25px white;}
 }
 
 /* BUTTON */
@@ -37,10 +46,16 @@ body {
   width: 260px;
   padding: 14px;
   border-radius: 30px;
-  border: 2px solid #ff00ff;
-  color: #ff00ff;
+  border: 2px solid #a020f0;
+  color: #a020f0;
   text-align: center;
   text-decoration: none;
+  transition: 0.3s;
+}
+.main-btn:hover {
+  background: #a020f0;
+  color: black;
+  box-shadow: 0 0 20px #a020f0;
 }
 
 /* FILTER */
@@ -51,13 +66,19 @@ body {
   margin: 5px;
   padding: 10px 20px;
   border-radius: 20px;
-  border: none;
+  border: 1px solid transparent;
   background: #1a1a1f;
   color: white;
   cursor: pointer;
+  transition: 0.3s;
+}
+.filter button:hover {
+  border: 1px solid #a020f0;
+  box-shadow: 0 0 10px #a020f0;
 }
 .filter .active {
-  background: linear-gradient(45deg, #ff00ff, #9900ff);
+  border: 1px solid #a020f0;
+  box-shadow: 0 0 15px #a020f0;
 }
 
 /* CARD */
@@ -73,7 +94,12 @@ body {
   padding: 15px;
   border-radius: 20px;
   background: #111;
-  box-shadow: 0 0 20px #ff00ff50;
+  box-shadow: 0 0 15px #a020f050;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #a020f0;
 }
 
 .card img {
@@ -82,7 +108,7 @@ body {
 }
 
 .price {
-  color: #ff00ff;
+  color: #a020f0;
 }
 
 .actions {
@@ -97,9 +123,13 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
+.info:hover {
+  background: white;
+  color: black;
+}
 
 .order {
-  background: linear-gradient(45deg, #ff00ff, #9900ff);
+  background: linear-gradient(45deg, #a020f0, #6a00ff);
   padding: 8px 15px;
   border-radius: 10px;
   color: white;
@@ -123,11 +153,23 @@ body {
   padding: 20px;
   border-radius: 15px;
   text-align: center;
+  border: 1px solid #a020f0;
+}
+.popup button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #a020f0;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 </style>
 </head>
 
 <body>
+
+<canvas id="rain"></canvas>
 
 <div class="header">
   <div class="title">DOWSN HACKS STORE</div>
@@ -145,53 +187,71 @@ body {
 
 <div class="container">
 
-<!-- HG -->
+<!-- FREE FIRE -->
 <div class="card ff">
-  <img src="https://media.discordapp.net/attachments/1413434672993800216/1484398547280592946/HG.jpg">
-  <h3>HG CHEAT (NO ROOT)</h3>
+  <img src="https://media.discordapp.net/attachments/1413434672993800216/1484398547280592946/HG.jpg?ex=69be1560&is=69bcc3e0&hm=32acb6cb056d77348e4b3d2a62ddf9f72fed7ec5f81728c387e3a88657fc5817&=&format=webp&width=611&height=614">
+  <h3>HG CHEAT (NO ROOT) [FREE FIRE]</h3>
   <p>7 Hari - <span class="price">70K</span></p>
+  <p>10 Hari - <span class="price">95K</span></p>
+  <p>30 Hari - <span class="price">160K</span></p>
   <div class="actions">
     <div class="info" onclick="showInfo('NO ROOT')">INFO</div>
-    <a href="https://wa.me/6282382140321?text=buy%20cheat%20hg%20no%20root%20bang" target="_blank" class="order">ORDER</a>
+    <a href="https://wa.link/okvaxi" target="_blank" class="order">ORDER</a>
   </div>
 </div>
 
-<!-- DRIPT NO ROOT -->
 <div class="card ff">
-  <img src="https://media.discordapp.net/attachments/1413434672993800216/1484398546944790658/Screenshot_2026_0320_104822.jpg">
-  <h3>DRIPT CLIENT (NO ROOT)</h3>
+  <img src="https://media.discordapp.net/attachments/1413434672993800216/1484398546944790658/Screenshot_2026_0320_104822.jpg?ex=69be1560&is=69bcc3e0&hm=29337768ca5abd9670b0468b473460ae8c0b7ac4899631836f76b0a4eb5b4db5&=&format=webp&width=1104&height=614">
+  <h3>DRIPT CLIENT (NO ROOT) [FREE FIRE]</h3>
+  <p>1 Hari - <span class="price">40K</span></p>
+  <p>3 Hari - <span class="price">50K</span></p>
+  <p>7 Hari - <span class="price">100K</span></p> 
+  <p>15 Hari - <span class="price">150K</span></p>
+  <p>30 Hari - <span class="price">240K</span></p>
   <div class="actions">
     <div class="info" onclick="showInfo('NO ROOT')">INFO</div>
-    <a href="https://wa.me/6282382140321?text=buy%20dript%20no%20root%20bang" target="_blank" class="order">ORDER</a>
+    <a href="https://wa.link/okvaxi" target="_blank" class="order">ORDER</a>
   </div>
 </div>
 
-<!-- DRIPT ROOT -->
 <div class="card ff">
-  <img src="https://media.discordapp.net/attachments/1413434672993800216/1484398546944790658/Screenshot_2026_0320_104822.jpg">
-  <h3>DRIPT CLIENT (ROOT)</h3>
+  <img src="https://media.discordapp.net/attachments/1413434672993800216/1484398546944790658/Screenshot_2026_0320_104822.jpg?ex=69be1560&is=69bcc3e0&hm=29337768ca5abd9670b0468b473460ae8c0b7ac4899631836f76b0a4eb5b4db5&=&format=webp&width=1104&height=614">
+  <h3>DRIPT CLIENT (ROOT) [FREE FIRE]</h3>
+  <p>1 Hari - <span class="price">35K</span></p>
+  <p>7 Hari - <span class="price">95K</span></p> 
+  <p>30 Hari - <span class="price">195K</span></p>
   <div class="actions">
     <div class="info" onclick="showInfo('ROOT')">INFO</div>
-    <a href="https://wa.me/6282382140321?text=buy%20dript%20root%20bang" target="_blank" class="order">ORDER</a>
+    <a href="https://wa.link/okvaxi" target="_blank" class="order">ORDER</a>
   </div>
 </div>
 
-<!-- ML -->
+<!-- MOBILE LEGENDS -->
 <div class="card ml">
-  <img src="https://via.placeholder.com/300x200?text=ATTIC">
-  <h3>ATTIC EXCLUSIVE</h3>
+  <img src="https://media.discordapp.net/attachments/1413434672993800216/1484417991704580227/Screenshot_2026_0320_105434.jpg?ex=69be277c&is=69bcd5fc&hm=aa4dc82d248696e678e7d16c1959d8680c2db70e6316db4f0cf3105995acd17f&=&format=webp&width=1349&height=614">
+  <h3>ATTIC EXCLUSIVE [MOBILE LEGENDS]</h3>
+  <p>3 Hari - <span class="price">30K</span></p>
+  <p>7 Hari - <span class="price">55K</span></p>
+  <p>30 Hari - <span class="price">105K</span></p>
+  <p>60 Hari - <span class="price">185K</span></p>
+  <p>90 Hari - <span class="price">255K</span></p>
   <div class="actions">
     <div class="info" onclick="showInfo('SCRIPT PREMIUM')">INFO</div>
-    <a href="https://wa.me/6282382140321?text=buy%20attic%20ml%20bang" target="_blank" class="order">ORDER</a>
+    <a href="https://wa.link/okvaxi" target="_blank" class="order">ORDER</a>
   </div>
 </div>
 
 <div class="card ml">
-  <img src="https://via.placeholder.com/300x200?text=NECRO">
-  <h3>NECRO CHEAT</h3>
+  <img src="https://media.discordapp.net/attachments/1413434672993800216/1484417991251726438/Screenshot_2026_0320_120427.jpg?ex=69be277c&is=69bcd5fc&hm=cabe8b4e74dcd4c53dcf89cdf15a3be189dcc11b72f09060c25bd62e9b12a329&=&format=webp&width=1260&height=531">
+  <h3>NECRO CHEAT [MOBILE LEGENDS]</h3>
+  <p>1 Hari - <span class="price">20K</span></p>
+  <p>2 Hari - <span class="price">30K</span></p>
+  <p>3 Hari - <span class="price">40K</span></p>
+  <p>7 Hari - <span class="price">75K</span></p>
+  <p>30 Hari - <span class="price">165K</span></p>
   <div class="actions">
-    <div class="info" onclick="showInfo('ANTI BAN')">INFO</div>
-    <a href="https://wa.me/6282382140321?text=buy%20necro%20ml%20bang" target="_blank" class="order">ORDER</a>
+    <div class="info" onclick="showInfo('ANTI BAN / AMAN')">INFO</div>
+    <a href="https://wa.link/okvaxi" target="_blank" class="order">ORDER</a>
   </div>
 </div>
 
@@ -206,6 +266,7 @@ body {
 </div>
 
 <script>
+// FILTER
 function filterGame(game, el) {
   let cards = document.querySelectorAll(".card");
   let buttons = document.querySelectorAll(".filter button");
@@ -218,6 +279,7 @@ function filterGame(game, el) {
   });
 }
 
+// POPUP
 function showInfo(text) {
   document.getElementById("popupText").innerText = text;
   document.getElementById("popup").style.display = "flex";
@@ -225,6 +287,49 @@ function showInfo(text) {
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
+
+// RAIN
+const canvas = document.getElementById("rain");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let rain = [];
+for (let i = 0; i < 100; i++) {
+  rain.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    l: Math.random() * 20,
+    s: Math.random() * 5 + 2
+  });
+}
+
+function drawRain() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.strokeStyle = "#a020f0";
+
+  rain.forEach(r => {
+    ctx.beginPath();
+    ctx.moveTo(r.x, r.y);
+    ctx.lineTo(r.x, r.y + r.l);
+    ctx.stroke();
+  });
+
+  rain.forEach(r => {
+    r.y += r.s;
+    if (r.y > canvas.height) {
+      r.y = 0;
+      r.x = Math.random() * canvas.width;
+    }
+  });
+}
+
+function animateRain() {
+  drawRain();
+  requestAnimationFrame(animateRain);
+}
+animateRain();
 </script>
 
 </body>
