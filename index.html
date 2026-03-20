@@ -58,9 +58,26 @@ canvas {
   box-shadow: 0 0 20px #e74c3c; /* Changed from purple to red */
 }
 
+/* NEW: HORIZONTAL LINE UNDER BUTTON */
+.horizontal-line {
+  width: 150px; /* Approx 3cm on screen */
+  height: 2px;
+  background: #808080; /* Abu-abu */
+  margin: 15px auto; /* Posisi di bawah tombol */
+  opacity: 0;
+  animation: fadeLine 1.5s infinite;
+}
+
+@keyframes fadeLine {
+  0% { opacity: 0; transform: scaleX(0.5); }
+  50% { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(0.5); }
+}
+
 /* FILTER */
 .filter {
   text-align: center;
+  margin-top: 15px;
 }
 .filter button {
   margin: 5px;
@@ -178,6 +195,9 @@ canvas {
 <a href="https://whatsapp.com/channel/0029VbCWSPqEgGfEQvFui73V" target="_blank" class="main-btn">
 ⭐ LIHAT TESTIMONI →
 </a>
+
+<!-- GARIS ABU-ABU ANIMASI DI BAWAH TOMBOL -->
+<div class="horizontal-line"></div>
 
 <div class="filter">
   <button onclick="filterGame('all', this)" class="active">ALL</button>
@@ -357,7 +377,7 @@ for (let i = 0; i < 100; i++) {
 
 function drawRain() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = "#808080"; /* Changed from purple to gray */
+  ctx.strokeStyle = "#808080"; /* Abu-abu */
 
   rain.forEach(r => {
     ctx.beginPath();
